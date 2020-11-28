@@ -73,7 +73,7 @@ def fanOFF():
     setPin(False)
     sleep(10) # La ventola si spegne per 10 secondi
     return()
-# Algoritmo si esecuzione principale da cui richiamo le varie funzioni
+# Algoritmo di esecuzione principale da cui richiamo le varie funzioni
 def getTEMP():
     CPU_temp = float(getCPUtemperature())
     if CPU_temp>maxTMP and CPU_temp<superTMP:
