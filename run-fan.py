@@ -27,15 +27,15 @@ def getCPUtemperature():
 # Funzione per logging all'accensione del Raspberry
 def loggingACC():
     now=datetime.datetime.now()
-    with open("/home/pi/Development/fan.log", mode='a') as file:
-        deg = u'\xb0'  # Codice utf per il simbolo del grado 
+    with open("/home/pi/Development/RunFan/fan.log", mode='a') as file:
+        deg = u'\xb0'  # utf code for degree
         deg = deg.encode('utf8')
         file.write('------------------ SISTEMA AVVIATO ------------------\n%s: Temperatura = %s%s\n' %(now.strftime("%d-%m-%Y %H:%M:%S"),getCPUtemperature(),deg))
         file.close()
 # Funzione per logging all'accensione della ventola
 def loggingON():
     now=datetime.datetime.now()
-    with open("/home/pi/Development/fan.log", mode='a') as file:
+    with open("/home/pi/Development/RunFan/fan.log", mode='a') as file:
         deg = u'\xb0'  # utf code for degree
         deg = deg.encode('utf8')
         file.write('%s: Temperatura = %s%s Ventola ON\n' %(now.strftime("%d-%m-%Y %H:%M:%S"),getCPUtemperature(),deg))
@@ -43,7 +43,7 @@ def loggingON():
 # Funzione per logging allo spegnimento della ventola
 def loggingOFF():
     now=datetime.datetime.now()
-    with open("/home/pi/Development/fan.log", mode='a') as file:
+    with open("/home/pi/Development/RunFan/fan.log", mode='a') as file:
         deg = u'\xb0'  # utf code for degree
         deg = deg.encode('utf8')
         file.write('%s: Temperatura = %s%s Ventola OFF\n' %(now.strftime("%d-%m-%Y %H:%M:%S"),getCPUtemperature(),deg))
@@ -79,7 +79,7 @@ def getTEMP():
     if CPU_temp>maxTMP and CPU_temp<superTMP:
         fanON()
     elif CPU_temp>superTMP:
-	    fanSUPER()
+        fanSUPER()
     else:
         fanOFF()
     return()
