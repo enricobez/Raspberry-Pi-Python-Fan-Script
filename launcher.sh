@@ -1,6 +1,7 @@
 #!/bin/sh
 # launcher.sh
-# navigate to home directory, then to this directory, then execute python script, then back home
+# Naviga verso la directory corrente, eseguire lo script python, poi torna a casa
 
 cd /home/pi/Development/RunFan
 sudo python2 run-fan.py
+cd /
